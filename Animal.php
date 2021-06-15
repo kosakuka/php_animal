@@ -9,19 +9,24 @@ class Animal{
         $this->name = '';//その動物の名前
     }
     public function eat($anml){
-        echo "こちらの{$this->name}の攻撃力は{$this->strength}";
-        echo "あいての{$anml->name}の攻撃力は{$anml->strength}";
+        echo "こちらの{$this->name}の攻撃力は{$this->strength}\n";
+        echo "あいての{$anml->name}の攻撃力は{$anml->strength}\n";
         if($this->strength > $anml->strength){
-            echo "相手を捕食した";
-            $anml->__destruct();
+            echo "相手を捕食した\n";
+            // $anml->__destruct();
+            $anml->shout();
         }elseif($this->strength == $anml->strength){
-            echo "相打ちになった";
+            echo "相打ちになった\n";
         }else{
-            echo "返り討ちにあった";
-            $this->__destruct();
+            echo "返り討ちにあった\n";
+            // $this->__destruct();
+            $this->shout();
         }
     }
-    public function __destruct(){
-        echo "{$this->voice}...";//食べられる際の鳴き声
+    public function shout(){
+        echo "{$this->voice}.....";//喰われたときに叫ぶ
     }
+    // public function __destruct(){
+    //     echo "{$this->voice}...\n";//食べられる際の鳴き声
+    // }
 }
