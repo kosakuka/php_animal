@@ -3,9 +3,11 @@ require_once('./Cat.php');
 require_once('./Mouse.php');
 require_once('./Lion.php');
 
+echo "動物が戦うプログラムです\nネズミ、ネコ、ライオンが登場します\n基本の攻撃力はそれぞれ1,5,10ですが、若干量変動します\n";
+
 $animals=[
-    new Cat(), new Cat(), new Cat(),
     new Mouse(), new Mouse(), new Mouse(),
+    new Cat(), new Cat(), new Cat(),
     new Lion(), new Lion(), new Lion(),
 ];
 for($i=0; $i<count($animals); $i++ ){
